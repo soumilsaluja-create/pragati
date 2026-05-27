@@ -4,17 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pragati Polytechnic — Best Vocational Institute in Gurugram</title>
-   <!-- Google Ads Conversion Tracking -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1016888288"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-1018585285"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-1016888288');
-  gtag('config', 'AW-1016888288/QR7wCPfgO4CBENK8IeUD', {
-    'phone_conversion_number': '+919810290953'
-  });
+
+  gtag('config', 'AW-1018585285');
 </script>
+   <!-- Event snippet for Website Call Tracking conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-1018585285/BoidCJrWjrQcEMXB2eUD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -608,7 +623,7 @@ footer { background: #040d18; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,5r
     <li><a href="#team">Faculty</a></li>
     <li><a href="#admissions">Admissions</a></li>
     <li><a href="https://wa.me/919818264953?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Pragati%20Polytechnic." target="_blank" class="nav-cta">Enquire Now</a></li>
-    <li><a href="tel:+919810290953" style="background:#d4920a;color:#000;padding:8px 18px;border-radius:6px;font-weight:700;font-size:12.5px;white-space:nowrap;">📞 98102 90953</a></li>
+    <li><a href="tel:+919810290953" onclick="return gtag_report_conversion('tel:+919810290953');" style="background:#d4920a;color:#000;padding:8px 18px;border-radius:6px;font-weight:700;font-size:12.5px;white-space:nowrap;">📞 98102 90953</a></li>
   </ul>
   <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
 </nav>
