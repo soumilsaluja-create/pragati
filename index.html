@@ -1035,6 +1035,7 @@ body{padding-bottom:56px}
         b.style.color = '#fff';
         b.style.opacity = '1';
         b.disabled = false;
+        gtag('event', 'conversion', {'send_to': 'AW-1018585285/P5hbCPmr_b4cEMXB2eUD'});
         var text = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + fname + ' ' + lname + '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + (course || '—') + '\n' + (message ? '💬 *Message:* ' + message : '');
         window.open('https://wa.me/919818264953?text=' + encodeURIComponent(text), '_blank');
         setTimeout(function () {
@@ -1061,6 +1062,14 @@ body{padding-bottom:56px}
   };
 
 })();
+</script>
+<script>
+document.addEventListener('click', function(e) {
+  var a = e.target.closest('a[href*="wa.me"]');
+  if (a && typeof gtag === 'function') {
+    gtag('event', 'conversion', {'send_to': 'AW-1018585285/OC4cCPyr_b4cEMXB2eUD'});
+  }
+}, true);
 </script>
 </body>
 </html>
