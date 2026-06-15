@@ -1029,7 +1029,7 @@ body{padding-bottom:56px}
     fetch('https://formspree.io/f/meenjwzr', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ name: fname + ' ' + lname, phone: phone, email: email, course: course, message: message || '—' })
+      body: JSON.stringify({ name: fname + ' ' + lname, phone: phone, enquiry_email: email, course: course, message: message || '—' })
     })
     .then(function (res) { return res.json(); })
     .then(function (data) {
@@ -1082,7 +1082,7 @@ body{padding-bottom:56px}
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        name: name, phone: phone, email: email, course: course,
+        name: name, phone: phone, enquiry_email: email, course: course,
         source: 'Pragati Polytechnic — Hero Form'
       })
     })
