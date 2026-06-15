@@ -484,6 +484,10 @@ footer { background: #040d18; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,5r
         <input type="tel" id="pf-phone" placeholder="e.g. 98765 43210" autocomplete="tel">
       </div>
       <div class="hfi-field">
+        <label for="pf-email">Email Address</label>
+        <input type="email" id="pf-email" placeholder="you@email.com" autocomplete="email">
+      </div>
+      <div class="hfi-field">
         <label for="pf-course">Course of Interest *</label>
         <select id="pf-course">
           <option value="">Select a course</option>
@@ -747,7 +751,7 @@ footer { background: #040d18; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,5r
     </div>
     <div class="c-item rv">
       <div class="c-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.77 3.44 2 2 0 0 1 3.74 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-      <div><span class="c-lbl">Centralised Enquiry Cell</span><span class="c-val"><a href="tel:+919958255700" onclick="gtag_report_conversion('tel:+919958255700')" style="color:inherit;text-decoration:none">+91 99582 55700</a><br><a href="tel:+919818264953" onclick="gtag_report_conversion('tel:+919818264953')" style="color:inherit;text-decoration:none">+91 98182 64953</a></span></div>
+      <div><span class="c-lbl">Centralised Enquiry Cell</span><span class="c-val"><a href="tel:+919810290953" onclick="gtag_report_conversion('tel:+919810290953')" style="color:inherit;text-decoration:none">+91 98102 90953</a></span></div>
     </div>
     <div class="c-item rv">
       <div class="c-ico"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
@@ -806,7 +810,7 @@ footer { background: #040d18; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,5r
     <div>
       <div class="f-col-title">Contact</div>
       <ul class="f-links">
-        <li><a href="tel:+919958255700" onclick="gtag_report_conversion('tel:+919958255700')">+91 99582 55700</a></li><li><a href="tel:+919818264953" onclick="gtag_report_conversion('tel:+919818264953')">+91 98182 64953</a></li>
+        <li><a href="tel:+919810290953" onclick="gtag_report_conversion('tel:+919810290953')">+91 98102 90953</a></li>
         <li><a href="#">pragatipolytechnic.com</a></li>
         <li style="margin-top:.75rem;color:var(--c-dim);font-size:12px;line-height:1.75">194/16, Nai Basti, Sector 8<br>Old Railway Road<br>Gurugram — 122001</li>
       </ul>
@@ -1054,6 +1058,55 @@ body{padding-bottom:56px}
       window.open('https://wa.me/919818264953?text=' + encodeURIComponent(text), '_blank');
     });
   });
+
+  /* Hero enquiry form submit */
+  window.handlePolyFormSubmit = function (e) {
+    var name   = document.getElementById('pf-name').value.trim();
+    var phone  = document.getElementById('pf-phone').value.trim();
+    var email  = document.getElementById('pf-email').value.trim();
+    var course = document.getElementById('pf-course').value;
+    var ok = true;
+
+    ['pf-name', 'pf-phone', 'pf-course'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el.value.trim()) { el.style.borderColor = 'rgba(255,80,80,.55)'; ok = false; }
+      else el.style.borderColor = '';
+    });
+    if (!ok) return;
+
+    var btn = e.target;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/meenjwzr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name, phone: phone, email: email, course: course,
+        source: 'Pragati Polytechnic — Hero Form'
+      })
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d.ok || d.next) {
+        btn.textContent = 'Submitted ✓ We\'ll call you soon!';
+        btn.style.background = 'linear-gradient(135deg,#4caf50,#2e7d32)';
+        btn.style.color = '#fff';
+        btn.disabled = false;
+        gtag('event', 'conversion', {'send_to': 'AW-1018585285/P5hbCPmr_b4cEMXB2eUD'});
+        var msg = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + name +
+                  '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + course;
+        window.open('https://wa.me/919818264953?text=' + encodeURIComponent(msg), '_blank');
+      } else { throw new Error(); }
+    })
+    .catch(function () {
+      btn.textContent = 'Get Course Details →';
+      btn.disabled = false;
+      var msg = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + name +
+                '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + course;
+      window.open('https://wa.me/919818264953?text=' + encodeURIComponent(msg), '_blank');
+    });
+  };
 
   /* gtag conversion helper */
   window.gtag_report_conversion = function(url) {
