@@ -1026,6 +1026,7 @@ body{padding-bottom:56px}
     var email   = all[3] ? all[3].value.trim() : '';
     var course  = document.querySelector('.f-sel') ? document.querySelector('.f-sel').value : '';
     var message = document.querySelector('.f-ta')  ? document.querySelector('.f-ta').value.trim() : '';
+    if (typeof gtag === 'function') { gtag('event', 'conversion', {'send_to': 'AW-1018585285/P5hbCPmr_b4cEMXB2eUD'}); }
     var b = this;
     b.textContent = 'Sending…';
     b.disabled = true;
@@ -1043,7 +1044,6 @@ body{padding-bottom:56px}
         b.style.color = '#fff';
         b.style.opacity = '1';
         b.disabled = false;
-        gtag('event', 'conversion', {'send_to': 'AW-1018585285/P5hbCPmr_b4cEMXB2eUD'});
         var text = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + fname + ' ' + lname + '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + (course || '—') + '\n' + (message ? '💬 *Message:* ' + message : '');
         window.open('https://wa.me/919818264953?text=' + encodeURIComponent(text), '_blank');
         setTimeout(function () {
@@ -1078,6 +1078,7 @@ body{padding-bottom:56px}
     });
     if (!ok) return;
 
+    if (typeof gtag === 'function') { gtag('event', 'conversion', {'send_to': 'AW-1018585285/P5hbCPmr_b4cEMXB2eUD'}); }
     var btn = e.target;
     btn.textContent = 'Sending…';
     btn.disabled = true;
@@ -1097,7 +1098,6 @@ body{padding-bottom:56px}
         btn.style.background = 'linear-gradient(135deg,#4caf50,#2e7d32)';
         btn.style.color = '#fff';
         btn.disabled = false;
-        gtag('event', 'conversion', {'send_to': 'AW-1018585285/P5hbCPmr_b4cEMXB2eUD'});
         var msg = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + name +
                   '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + course;
         window.open('https://wa.me/919818264953?text=' + encodeURIComponent(msg), '_blank');
