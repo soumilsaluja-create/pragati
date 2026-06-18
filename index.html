@@ -46,8 +46,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   --c-gold-bd:  rgba(212,146,10,.28);
   --c-div:      rgba(255,255,255,.07);
   --c-text:     #eef2ff;
-  --c-muted:    rgba(210,220,255,.52);
-  --c-dim:      rgba(210,220,255,.28);
+  --c-muted:    #9fabce;
+  --c-dim:      #8089ab;
   --f-head: 'Playfair Display', Georgia, serif;
   --f-body: 'DM Sans', system-ui, -apple-system, sans-serif;
   --sp-xs:  clamp(.5rem,  1.5vw,  .75rem);
@@ -138,8 +138,8 @@ a { text-decoration: none; }
 .hfi-submit { width: 100%; background: linear-gradient(135deg, var(--c-gold), var(--c-gold2)); color: #000; font-family: var(--f-head); font-size: 1rem; font-weight: 700; padding: 1rem; border: none; border-radius: 10px; cursor: pointer; margin-top: 0.6rem; transition: opacity 0.2s, transform 0.15s; letter-spacing: 0.8px; text-transform: uppercase; }
 .hfi-submit:hover { opacity: 0.9; transform: translateY(-2px); }
 .hfi-submit:active { transform: scale(0.98); }
-.hfi-wa { width: 100%; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.6rem; background: #25D366; color: #fff; font-family: var(--f-body); font-size: 0.9rem; font-weight: 700; padding: 0.95rem; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; letter-spacing: 0.5px; text-transform: uppercase; }
-.hfi-wa:hover { background: #1da851; }
+.hfi-wa { width: 100%; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.6rem; background: #127349; color: #fff; font-family: var(--f-body); font-size: 0.9rem; font-weight: 700; padding: 0.95rem; border-radius: 10px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; letter-spacing: 0.5px; text-transform: uppercase; }
+.hfi-wa:hover { background: #0d5c3d; }
 .hfi-note { font-size: 0.72rem; color: var(--c-dim); text-align: center; margin-top: 1.2rem; }
 @media (max-width: 768px) { .poly-courses { gap: 0.5rem; } .poly-course-pill { font-size: 0.72rem; padding: 0.3rem 0.7rem; } .form-wrapper h2 { font-size: 1.5rem; } #hero-form-section { padding: var(--sp-xl) var(--sp-lg); } }
 
@@ -205,7 +205,7 @@ a { text-decoration: none; }
 @keyframes ticker { to { transform: translateX(-50%); } }
 .t-item { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
 .t-dot  { width: 5px; height: 5px; border-radius: 50%; background: var(--c-gold); flex-shrink: 0; }
-.t-text { font-size: 11.5px; color: rgba(210,220,255,.42); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+.t-text { font-size: 11.5px; color: #8089ab; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
 
 /* HALF BANNER */
 .half-banner { height: clamp(220px, 45vw, 68vh); }
@@ -278,7 +278,7 @@ a { text-decoration: none; }
 .c-lbl   { font-size: 10px; color: rgba(210,220,255,.38); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; display: block; }
 .c-val   { font-size: 14px; color: var(--c-text); line-height: 1.55; }
 .form-title { font-family: var(--f-head); font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 1.75rem; }
-.f-lbl { font-size: 10px; color: rgba(210,220,255,.42); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 7px; display: block; font-weight: 600; }
+.f-lbl { font-size: 10px; color: #8089ab; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 7px; display: block; font-weight: 600; }
 .f-in, .f-sel, .f-ta { width: 100%; background: rgba(255,255,255,.04); border: 1px solid rgba(100,140,255,.14); border-radius: var(--r-md); padding: 13px 15px; font-size: 16px; color: #fff; font-family: var(--f-body); outline: none; transition: border-color .25s, background .25s; margin-bottom: 1.1rem; -webkit-appearance: none; appearance: none; }
 .f-in:focus, .f-sel:focus, .f-ta:focus { border-color: var(--c-gold); background: rgba(212,146,10,.04); }
 .f-sel option { background: var(--c-bg2); color: #fff; }
@@ -291,10 +291,10 @@ footer { background: #040d18; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,5r
 .footer-brand { font-family: var(--f-head); font-size: 22px; font-weight: 900; color: #fff; margin-bottom: 1rem; }
 .footer-brand em { color: var(--c-gold); font-style: italic; }
 .footer-desc { font-size: 13px; color: var(--c-dim); line-height: 1.85; max-width: 260px; margin-bottom: 1.25rem; }
-.f-col-title { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(210,220,255,.32); font-weight: 600; margin-bottom: 1.25rem; }
+.f-col-title { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #8089ab; font-weight: 600; margin-bottom: 1.25rem; }
 .f-links { list-style: none; }
 .f-links li { margin-bottom: .7rem; }
-.f-links a { font-size: 13px; color: rgba(210,220,255,.42); transition: color .2s; }
+.f-links a { font-size: 13px; color: #8089ab; transition: color .2s; }
 .f-links a:hover { color: var(--c-gold); }
 .footer-bottom { padding-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
 .footer-bottom p { font-size: 12px; color: var(--c-dim); }
@@ -340,7 +340,7 @@ footer { background: #040d18; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,5r
 .fab svg { flex-shrink: 0; }
 
 /* Individual colours */
-.fab-wa      { background: #25D366; animation: wap 2.5s ease infinite; }
+.fab-wa      { background: #127349; animation: wap 2.5s ease infinite; }
 .fab-call    { background: #d4920a; }
 .fab-apply   { background: #f0b429; }
 .fab-reviews { background: #fff; }
@@ -366,8 +366,8 @@ footer { background: #040d18; padding: clamp(3rem,6vw,5rem) clamp(1.25rem,5vw,5r
 }
 
 @keyframes wap {
-  0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,.45); }
-  50%      { box-shadow: 0 4px 32px rgba(37,211,102,.75); }
+  0%,100% { box-shadow: 0 4px 18px rgba(18,115,73,.45); }
+  50%      { box-shadow: 0 4px 32px rgba(18,115,73,.75); }
 }
 
 /* RESPONSIVE */
@@ -451,7 +451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="cine" id="hero">
-  <div class="cine-bg" id="bg-hero"></div>
+  <div class="cine-bg" id="bg-hero" style="background-image:url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1400&q=75&fit=crop')"></div>
   <div class="cine-veil"></div>
   <div class="hero-inner">
     <div class="h-tag">Best Vocational Institute — Gurugram</div>
@@ -530,7 +530,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ABOUT -->
 <div class="about-grid" id="about">
   <div class="about-visual">
-    <img id="img-about" src="" alt="Classroom at Pragati Polytechnic">
+    <img id="img-about" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=75&fit=crop" width="900" height="600" loading="eager" decoding="async" alt="Classroom at Pragati Polytechnic">
     <div class="about-visual-overlay"></div>
   </div>
   <div class="about-text">
@@ -627,7 +627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- LAB BANNER -->
 <div class="cine half-banner">
-  <div class="cine-bg" id="bg-lab"></div>
+  <div class="cine-bg" id="bg-lab" style="background-image:url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg')"></div>
   <div class="cine-veil2"></div>
   <div class="hb-inner rv">
     <div class="sec-tag" style="justify-content:center;margin-bottom:.75rem">State-of-the-Art Facilities</div>
@@ -694,17 +694,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="sec-title" style="text-align:center;margin-bottom:0">Our Campus</h2>
   </div>
   <div class="mosaic rv">
-    <div class="m-cell"><img id="img-front" src="" alt="Institute Entrance"><div class="m-cap">Institute Entrance</div></div>
-    <div class="m-cell"><img id="img-rec"   src="" alt="Reception"><div class="m-cap">Reception &amp; Waiting Area</div></div>
-    <div class="m-cell"><img id="img-gnd"   src="" alt="Ground Floor"><div class="m-cap">Ground Floor</div></div>
-    <div class="m-cell"><img id="img-lab"   src="" alt="Computer Lab"><div class="m-cap">Computer Lab</div></div>
-    <div class="m-cell"><img id="img-conv"  src="" alt="Convocation"><div class="m-cap">Convocation Ceremony</div></div>
+    <div class="m-cell"><img id="img-front" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1200,h=900,fit=crop/meP5geMrkXhOkRNp/institute_front-Yg2L4xloj5F5b7Ll.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Institute Entrance"><div class="m-cap">Institute Entrance</div></div>
+    <div class="m-cell"><img id="img-rec"   src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=600,fit=crop/meP5geMrkXhOkRNp/reception_waiting_area-YZ9aE9L7Vru8n0w0.jpg" width="768" height="600" loading="lazy" decoding="async" alt="Reception"><div class="m-cap">Reception &amp; Waiting Area</div></div>
+    <div class="m-cell"><img id="img-gnd"   src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=600,fit=crop/meP5geMrkXhOkRNp/ground_floor-AE02709MQ7SKO73z.jpg" width="768" height="600" loading="lazy" decoding="async" alt="Ground Floor"><div class="m-cap">Ground Floor</div></div>
+    <div class="m-cell"><img id="img-lab"   src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=600,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg" width="768" height="600" loading="lazy" decoding="async" alt="Computer Lab"><div class="m-cap">Computer Lab</div></div>
+    <div class="m-cell"><img id="img-conv"  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=900,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg" width="900" height="600" loading="lazy" decoding="async" alt="Convocation"><div class="m-cap">Convocation Ceremony</div></div>
   </div>
 </section>
 
 <!-- CONVO BANNER -->
 <div class="cine" style="height:clamp(180px,38vw,55vh);margin-top:3px">
-  <div class="cine-bg" id="bg-conv"></div>
+  <div class="cine-bg" id="bg-conv" style="background-image:url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg')"></div>
   <div class="cine-veil2"></div>
   <div class="hb-inner rv">
     <div class="sec-tag" style="justify-content:center;margin-bottom:.75rem">Student Success</div>
@@ -723,7 +723,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="dir-row rv">
     <div class="f-card">
       <div class="f-portrait">
-        <img id="img-dir" src="" alt="Mr. Neeraj Saluja" style="object-position:center 0%">
+        <img id="img-dir" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=800,fit=crop/meP5geMrkXhOkRNp/director-YNqOMqnpe4H1v0jy.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Mr. Neeraj Saluja" style="object-position:center 0%">
         <div class="f-veil"></div>
       </div>
       <div class="f-info">
@@ -736,7 +736,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div style="padding:0 clamp(1.25rem,5vw,5rem) clamp(3rem,6vw,5rem)">
     <p class="sec-body rv" style="text-align:center;margin-bottom:2rem">Our dedicated teaching staff who bring years of expertise to every classroom.</p>
     <div class="team-group-wrap rv">
-      <img id="img-team" src="" alt="Faculty — Mrs. Harsha Kathuria (Principal) and Mrs. Rashmi Dhody (Senior Lecturer)">
+      <img id="img-team" src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/team-mjEP4W921QTXzNjE.jpg" width="1400" height="700" loading="lazy" decoding="async" alt="Faculty — Mrs. Harsha Kathuria (Principal) and Mrs. Rashmi Dhody (Senior Lecturer)">
     </div>
     <div class="team-names rv">
       <div class="tn"><div class="tn-role">Principal</div><div class="tn-name">Mrs. Harsha Kathuria</div><div class="tn-qual">Vocational Education</div></div>
@@ -781,7 +781,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <label class="f-lbl">Email Address <span style="color:var(--c-muted);font-size:11px;">(optional)</span></label>
     <input class="f-in f-optional" type="text" inputmode="email" placeholder="you@email.com" autocomplete="email">
     <label class="f-lbl">Course of Interest *</label>
-    <select class="f-sel">
+    <select class="f-sel" aria-label="Course of Interest">
       <option value="">Select a course…</option>
       <option>Teachers' Training Courses (NTT / TTT)</option>
       <option>Computer Courses</option>
@@ -802,7 +802,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <div class="footer-brand">Pragati<em>.</em></div>
       <p class="footer-desc">Dedicated to providing vocational and employment-oriented training to career-conscious youth. Empowering the next generation since establishment.</p>
-      <p style="font-size:12px;color:var(--c-dim)">Sister Institute: <span style="color:rgba(212,146,10,.65)">pragatibedinstitute.com</span></p>
+      <p style="font-size:12px;color:var(--c-dim)">Sister Institute: <span style="color:var(--c-gold2)">pragatibedinstitute.com</span></p>
     </div>
     <div>
       <div class="f-col-title">Courses</div>
@@ -900,7 +900,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.92a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
     Call Now
   </a>
-  <a href="https://wa.me/919818264953?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Pragati%20Polytechnic." target="_blank" style="flex:1;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:700;text-decoration:none;">
+  <a href="https://wa.me/919818264953?text=Hello%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20at%20Pragati%20Polytechnic." target="_blank" style="flex:1;background:#127349;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:700;text-decoration:none;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     WhatsApp
   </a>
@@ -916,21 +916,14 @@ body{padding-bottom:56px}
 <!-- SCRIPT -->
 <script>
 (function () {
-  var IMG = {
-    'bg-hero':    'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1400&q=75&fit=crop',
-    'bg-lab':     'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg',
-    'bg-conv':    'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg',
-    'img-about':  'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=75&fit=crop',
-    'img-front':  'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1200,h=900,fit=crop/meP5geMrkXhOkRNp/institute_front-Yg2L4xloj5F5b7Ll.jpg',
-    'img-rec':    'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=600,fit=crop/meP5geMrkXhOkRNp/reception_waiting_area-YZ9aE9L7Vru8n0w0.jpg',
-    'img-gnd':    'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=600,fit=crop/meP5geMrkXhOkRNp/ground_floor-AE02709MQ7SKO73z.jpg',
-    'img-lab':    'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=600,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg',
-    'img-conv':   'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=900,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg',
-    'img-dir':    'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,h=800,fit=crop/meP5geMrkXhOkRNp/director-YNqOMqnpe4H1v0jy.jpg',
-    'img-team':   'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/team-mjEP4W921QTXzNjE.jpg'
+  var BG_IDS = ['bg-hero', 'bg-lab', 'bg-conv'];
+  var BG_URLS = {
+    'bg-hero': 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1400&q=75&fit=crop',
+    'bg-lab':  'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg',
+    'bg-conv': 'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg'
   };
-  var CV = 'pg_v5';
-  var ids = Object.keys(IMG);
+  var IMG_IDS = ['img-about', 'img-front', 'img-rec', 'img-gnd', 'img-lab', 'img-conv', 'img-dir', 'img-team'];
+  var TOTAL = BG_IDS.length + IMG_IDS.length;
   var done = 0;
   var lbar = document.getElementById('lbar');
   var ltxt = document.getElementById('ltxt');
@@ -938,9 +931,9 @@ body{padding-bottom:56px}
 
   function progress() {
     done++;
-    lbar.style.width = Math.round(done / ids.length * 100) + '%';
-    ltxt.textContent = done < ids.length ? 'Loading… ' + done + '/' + ids.length : 'Ready!';
-    if (done >= ids.length) {
+    lbar.style.width = Math.round(done / TOTAL * 100) + '%';
+    ltxt.textContent = done < TOTAL ? 'Loading… ' + done + '/' + TOTAL : 'Ready!';
+    if (done >= TOTAL) {
       setTimeout(function () {
         loader.classList.add('hide');
         setTimeout(function () { loader.style.display = 'none'; }, 650);
@@ -949,39 +942,22 @@ body{padding-bottom:56px}
     }
   }
 
-  function applyImg(id, src) {
+  // background-image divs already have their URL set directly in HTML;
+  // preload via a detached Image() purely to know when to tick progress.
+  BG_IDS.forEach(function (id) {
+    var img = new Image();
+    img.onload = img.onerror = progress;
+    img.src = BG_URLS[id];
+  });
+
+  // <img> tags already have src set directly in HTML; use native
+  // complete/load events instead of re-fetching via XHR.
+  IMG_IDS.forEach(function (id) {
     var el = document.getElementById(id);
-    if (!el) return;
-    if (el.tagName === 'IMG') { el.src = src; }
-    else { el.style.backgroundImage = 'url(' + src + ')'; }
-  }
-
-  function loadImg(id, url) {
-    var key = CV + '_' + id;
-    try {
-      var c = localStorage.getItem(key);
-      if (c && c.length > 500) { applyImg(id, c); progress(); return; }
-    } catch (e) {}
-    var x = new XMLHttpRequest();
-    x.open('GET', url, true);
-    x.responseType = 'blob';
-    x.timeout = 25000;
-    x.onload = function () {
-      if (x.status >= 200 && x.status < 400) {
-        var r = new FileReader();
-        r.onloadend = function () {
-          applyImg(id, r.result);
-          try { localStorage.setItem(key, r.result); } catch (e) {}
-          progress();
-        };
-        r.readAsDataURL(x.response);
-      } else { applyImg(id, url); progress(); }
-    };
-    x.onerror = x.ontimeout = function () { applyImg(id, url); progress(); };
-    x.send();
-  }
-
-  ids.forEach(function (id) { loadImg(id, IMG[id]); });
+    if (!el) { progress(); return; }
+    if (el.complete) { progress(); }
+    else { el.addEventListener('load', progress); el.addEventListener('error', progress); }
+  });
 
   /* Nav stick */
   var nav = document.getElementById('nav');
