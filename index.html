@@ -916,31 +916,45 @@ body{padding-bottom:56px}
 <!-- SCRIPT -->
 <script>
 (function () {
+  // Only wait for elements that load immediately (CSS backgrounds always
+  // fetch right away; img-about has no loading="lazy"). The gallery/faculty
+  // images below are loading="lazy" -- they intentionally do NOT start
+  // downloading until scrolled into view, so they must never be part of
+  // this count or the splash screen would wait forever for them.
   var BG_IDS = ['bg-hero', 'bg-lab', 'bg-conv'];
   var BG_URLS = {
     'bg-hero': 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1400&q=75&fit=crop',
     'bg-lab':  'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg',
     'bg-conv': 'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg'
   };
-  var IMG_IDS = ['img-about', 'img-front', 'img-rec', 'img-gnd', 'img-lab', 'img-conv', 'img-dir', 'img-team'];
+  var IMG_IDS = ['img-about'];
   var TOTAL = BG_IDS.length + IMG_IDS.length;
   var done = 0;
+  var finished = false;
   var lbar = document.getElementById('lbar');
   var ltxt = document.getElementById('ltxt');
   var loader = document.getElementById('loader');
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    setTimeout(function () {
+      loader.classList.add('hide');
+      setTimeout(function () { loader.style.display = 'none'; }, 650);
+      document.getElementById('hero').classList.add('anim');
+    }, 300);
+  }
 
   function progress() {
     done++;
     lbar.style.width = Math.round(done / TOTAL * 100) + '%';
     ltxt.textContent = done < TOTAL ? 'Loading… ' + done + '/' + TOTAL : 'Ready!';
-    if (done >= TOTAL) {
-      setTimeout(function () {
-        loader.classList.add('hide');
-        setTimeout(function () { loader.style.display = 'none'; }, 650);
-        document.getElementById('hero').classList.add('anim');
-      }, 300);
-    }
+    if (done >= TOTAL) finish();
   }
+
+  // Safety net: never let the splash screen get stuck, no matter what
+  // (slow network, blocked CDN, unexpected error).
+  setTimeout(finish, 6000);
 
   // background-image divs already have their URL set directly in HTML;
   // preload via a detached Image() purely to know when to tick progress.
