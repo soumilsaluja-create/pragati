@@ -627,7 +627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- LAB BANNER -->
 <div class="cine half-banner">
-  <div class="cine-bg" id="bg-lab" style="background-image:url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg')"></div>
+  <div class="cine-bg" id="bg-lab" data-bg="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg"></div>
   <div class="cine-veil2"></div>
   <div class="hb-inner rv">
     <div class="sec-tag" style="justify-content:center;margin-bottom:.75rem">State-of-the-Art Facilities</div>
@@ -704,7 +704,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- CONVO BANNER -->
 <div class="cine" style="height:clamp(180px,38vw,55vh);margin-top:3px">
-  <div class="cine-bg" id="bg-conv" style="background-image:url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg')"></div>
+  <div class="cine-bg" id="bg-conv" data-bg="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg"></div>
   <div class="cine-veil2"></div>
   <div class="hb-inner rv">
     <div class="sec-tag" style="justify-content:center;margin-bottom:.75rem">Student Success</div>
@@ -916,23 +916,14 @@ body{padding-bottom:56px}
 <!-- SCRIPT -->
 <script>
 (function () {
-  // Only wait for elements that load immediately (CSS backgrounds always
-  // fetch right away; img-about has no loading="lazy"). The gallery/faculty
-  // images below are loading="lazy" -- they intentionally do NOT start
-  // downloading until scrolled into view, so they must never be part of
-  // this count or the splash screen would wait forever for them.
-  var BG_IDS = ['bg-hero', 'bg-lab', 'bg-conv'];
-  var BG_URLS = {
-    'bg-hero': 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1400&q=75&fit=crop',
-    'bg-lab':  'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=700,fit=crop/meP5geMrkXhOkRNp/computer-lab-Aq2eG286BgsbPBBZ.jpg',
-    'bg-conv': 'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1400,h=600,fit=crop/meP5geMrkXhOkRNp/convocation-mv05Po7jPWS16Q67.jpg'
-  };
-  var IMG_IDS = ['img-about'];
-  var TOTAL = BG_IDS.length + IMG_IDS.length;
-  var done = 0;
+  // Splash screen only waits for img-about: it's the one eager, fast,
+  // working image. bg-hero loads on its own via CSS (no need to also
+  // fetch it from JS). Below-fold gallery/faculty <img> tags use
+  // loading="lazy" and bg-lab/bg-conv use the IntersectionObserver
+  // lazy-background loader further down -- none of those are part of
+  // this count, or the splash would wait for resources that
+  // intentionally don't start downloading until scrolled into view.
   var finished = false;
-  var lbar = document.getElementById('lbar');
-  var ltxt = document.getElementById('ltxt');
   var loader = document.getElementById('loader');
 
   function finish() {
@@ -945,33 +936,32 @@ body{padding-bottom:56px}
     }, 300);
   }
 
-  function progress() {
-    done++;
-    lbar.style.width = Math.round(done / TOTAL * 100) + '%';
-    ltxt.textContent = done < TOTAL ? 'Loading… ' + done + '/' + TOTAL : 'Ready!';
-    if (done >= TOTAL) finish();
-  }
-
   // Safety net: never let the splash screen get stuck, no matter what
   // (slow network, blocked CDN, unexpected error).
-  setTimeout(finish, 6000);
+  setTimeout(finish, 2500);
 
-  // background-image divs already have their URL set directly in HTML;
-  // preload via a detached Image() purely to know when to tick progress.
-  BG_IDS.forEach(function (id) {
-    var img = new Image();
-    img.onload = img.onerror = progress;
-    img.src = BG_URLS[id];
-  });
+  (function () {
+    var el = document.getElementById('img-about');
+    if (!el || el.complete) { finish(); return; }
+    el.addEventListener('load', finish);
+    el.addEventListener('error', finish);
+  })();
 
-  // <img> tags already have src set directly in HTML; use native
-  // complete/load events instead of re-fetching via XHR.
-  IMG_IDS.forEach(function (id) {
-    var el = document.getElementById(id);
-    if (!el) { progress(); return; }
-    if (el.complete) { progress(); }
-    else { el.addEventListener('load', progress); el.addEventListener('error', progress); }
-  });
+  // Lazy-load CSS background-image divs (no native loading="lazy" for
+  // backgrounds) only once they're about to scroll into view, so they
+  // never compete with critical above-the-fold resources for bandwidth.
+  var lazyBgs = document.querySelectorAll('[data-bg]');
+  if (lazyBgs.length) {
+    var bgObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.backgroundImage = 'url(' + entry.target.dataset.bg + ')';
+          bgObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    lazyBgs.forEach(function (el) { bgObserver.observe(el); });
+  }
 
   /* Nav stick */
   var nav = document.getElementById('nav');
