@@ -778,15 +778,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="c-right">
     <div class="form-title">Send an Enquiry</div>
     <div class="f-row">
-      <div><label class="f-lbl">First Name</label><input class="f-in" type="text" placeholder="Aarav" autocomplete="given-name"></div>
-      <div><label class="f-lbl">Last Name</label><input class="f-in" type="text" placeholder="Sharma" autocomplete="family-name"></div>
+      <div><label class="f-lbl" for="pc-fname">First Name</label><input class="f-in" id="pc-fname" type="text" placeholder="Aarav" autocomplete="given-name"></div>
+      <div><label class="f-lbl" for="pc-lname">Last Name</label><input class="f-in" id="pc-lname" type="text" placeholder="Sharma" autocomplete="family-name"></div>
     </div>
-    <label class="f-lbl">Phone Number *</label>
-    <input class="f-in" type="tel" placeholder="+91 98765 43210" autocomplete="tel">
-    <label class="f-lbl">Email Address <span style="color:var(--c-muted);font-size:11px;">(optional)</span></label>
-    <input class="f-in f-optional" type="text" inputmode="email" placeholder="you@email.com" autocomplete="email">
-    <label class="f-lbl">Course of Interest *</label>
-    <select class="f-sel" aria-label="Course of Interest">
+    <label class="f-lbl" for="pc-phone">Phone Number *</label>
+    <input class="f-in" id="pc-phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel">
+    <label class="f-lbl" for="pc-email">Email Address <span style="color:var(--c-muted);font-size:11px;">(optional)</span></label>
+    <input class="f-in f-optional" id="pc-email" type="text" inputmode="email" placeholder="you@email.com" autocomplete="email">
+    <label class="f-lbl" for="pc-course">Course of Interest *</label>
+    <select class="f-sel" id="pc-course">
       <option value="">Select a course…</option>
       <option>Teachers' Training Courses (NTT / TTT)</option>
       <option>Computer Courses</option>
@@ -795,8 +795,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <option>Basic Computing</option>
       <option>Diploma in Modern Secretarial Practice</option>
     </select>
-    <label class="f-lbl">Message <span style="color:var(--c-muted);font-size:11px;">(optional)</span></label>
-    <textarea class="f-ta" placeholder="Any questions or additional information…"></textarea>
+    <label class="f-lbl" for="pc-message">Message <span style="color:var(--c-muted);font-size:11px;">(optional)</span></label>
+    <textarea class="f-ta" id="pc-message" placeholder="Any questions or additional information…"></textarea>
     <button class="btn-gold" id="fsub">Send Enquiry — We'll Call in 30 Minutes ⚡</button>
   </div>
 </div>
