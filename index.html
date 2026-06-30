@@ -1040,13 +1040,11 @@ body{padding-bottom:56px}
     .then(function (res) { return res.json(); })
     .then(function (data) {
       if (data.ok || data.next) {
-        b.textContent = 'Enquiry Sent ✓';
+        b.textContent = 'Thank you! We will contact you shortly ✓';
         b.style.background = 'linear-gradient(135deg,#4caf50,#2e7d32)';
         b.style.color = '#fff';
         b.style.opacity = '1';
         b.disabled = false;
-        var text = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + fname + ' ' + lname + '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + (course || '—') + '\n' + (message ? '💬 *Message:* ' + message : '');
-        window.open('https://wa.me/919818264953?text=' + encodeURIComponent(text), '_blank');
         setTimeout(function () {
           b.textContent = 'Submit Enquiry';
           b.style.background = '';
@@ -1056,11 +1054,16 @@ body{padding-bottom:56px}
       } else { throw new Error('Formspree error'); }
     })
     .catch(function () {
-      b.textContent = 'Submit Enquiry';
+      b.textContent = '⚠ Something went wrong — please call or WhatsApp us';
+      b.style.background = '#c0392b';
+      b.style.color = '#fff';
       b.style.opacity = '1';
       b.disabled = false;
-      var text = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + fname + ' ' + lname + '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + (course || '—') + '\n' + (message ? '💬 *Message:* ' + message : '');
-      window.open('https://wa.me/919818264953?text=' + encodeURIComponent(text), '_blank');
+      setTimeout(function () {
+        b.textContent = 'Submit Enquiry';
+        b.style.background = '';
+        b.style.color = '';
+      }, 4000);
     });
   });
 
@@ -1095,21 +1098,18 @@ body{padding-bottom:56px}
     .then(function (r) { return r.json(); })
     .then(function (d) {
       if (d.ok || d.next) {
-        btn.textContent = 'Submitted ✓ We\'ll call you soon!';
+        btn.textContent = 'Thank you! We will contact you shortly ✓';
         btn.style.background = 'linear-gradient(135deg,#4caf50,#2e7d32)';
         btn.style.color = '#fff';
         btn.disabled = false;
-        var msg = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + name +
-                  '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + course;
-        window.open('https://wa.me/919818264953?text=' + encodeURIComponent(msg), '_blank');
       } else { throw new Error(); }
     })
     .catch(function () {
-      btn.textContent = 'Get Course Details →';
+      btn.textContent = '⚠ Something went wrong — please call or WhatsApp us';
+      btn.style.background = '#c0392b';
+      btn.style.color = '#fff';
       btn.disabled = false;
-      var msg = '🎓 *New Enquiry — Pragati Polytechnic*\n\n👤 *Name:* ' + name +
-                '\n📞 *Phone:* ' + phone + '\n📧 *Email:* ' + (email || '—') + '\n📚 *Course:* ' + course;
-      window.open('https://wa.me/919818264953?text=' + encodeURIComponent(msg), '_blank');
+      setTimeout(function () { btn.textContent = 'Get Course Details →'; btn.style.background = ''; btn.style.color = ''; }, 4000);
     });
   };
 
